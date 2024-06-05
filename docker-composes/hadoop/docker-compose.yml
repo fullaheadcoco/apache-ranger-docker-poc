@@ -3,6 +3,7 @@ version: "3"
 services:
   namenode:
     image: kadensungbincho/ranger-hadoop-namenode:2.0.0-hadoop3.2.1-java8-ranger2.1.0
+    platform: linux/amd64
     container_name: namenode
     hostname: namenode
     restart: always
@@ -19,6 +20,7 @@ services:
 
   datanode:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
     container_name: datanode
     hostname: datanode
     restart: always
@@ -31,6 +33,7 @@ services:
 
   resourcemanager:
     image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
     container_name: resourcemanager
     hostname: resourcemanager
     restart: always
@@ -41,6 +44,7 @@ services:
 
   nodemanager1:
     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
     container_name: nodemanager
     hostname: nodemanager
     restart: always
@@ -51,6 +55,7 @@ services:
 
   historyserver:
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    platform: linux/amd64
     container_name: historyserver
     hostname: historyserver
     restart: always
@@ -63,6 +68,7 @@ services:
 
   hive-server:
     image: kadensungbincho/ranger-hive:2.0.0-hadoop3.2.1-java8-ranger2.1.0
+    platform: linux/amd64
     container_name: hive-server
     hostname: hive-server
     volumes:
@@ -76,6 +82,7 @@ services:
 
   hive-metastore:
     image: kadensungbincho/ranger-hive:2.0.0-hadoop3.2.1-java8-ranger2.1.0
+    platform: linux/amd64
     container_name: hive-metastore
     hostname: hive-metastore
     env_file:
@@ -88,6 +95,7 @@ services:
 
   hive-db:
     image: mysql:8.0.21
+    platform: linux/amd64
     container_name: hive-db
     hostname: hive-db
     command: --default-authentication-plugin=mysql_native_password --lower-case-table-names=1
@@ -98,6 +106,7 @@ services:
       MYSQL_PASSWORD: hive
   presto:
     image: kadensungbincho/ranger-presto:presto344-ranger2.1.0
+    platform: linux/amd64
     container_name: presto
     hostname: presto
     volumes:
@@ -115,6 +124,7 @@ services:
   # https://community.cloudera.com/t5/Support-Questions/How-to-Enable-Zookeeper-Discovery-for-HiveServer2-HA/td-p/95392
   zoo:
     image: zookeeper:3.4.14
+    platform: linux/amd64
     restart: always
     hostname: zookeeper
     ports:

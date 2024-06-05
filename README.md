@@ -13,4 +13,10 @@ cd ../hadoop
 docker-compose up -d --build
 ```
 
+```bash
+python3 -m webbrowser -t "http://localhost:6080"
+admin
+rangeradmin1
+```
+
 ## What happens?
